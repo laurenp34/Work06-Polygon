@@ -23,15 +23,22 @@ int main(int argc, char **argv) {
   polygons = new_matrix(4, 4);
   transform = new_matrix(4, 4);
 
-  // if ( argc == 2 )
-  //   parse_file( argv[1], transform, edges, polygons, s );
-  // else
-  //   parse_file( "stdin", transform, edges, polygons, s );
+  // add_box(polygons,150,200,0,100,100,100);
+  // transform = make_rotX(15);
+  // edges = make_rotY(15);
+  // matrix_mult(edges,transform);
+  // matrix_mult(transform,polygons);
+  // draw_polygons(polygons,s,c);
+  // display(s);
 
-  add_polygon(edges,100.0,100.0,0.0, 150.0,150.0,0.0, 200.0,100.0,0.0);
-  print_matrix(edges);
-  draw_polygons(edges,s,c);
-  display(s);
+  if ( argc == 2 )
+    parse_file( argv[1], transform, edges, polygons, s );
+  else
+    parse_file( "stdin", transform, edges, polygons, s );
+
+
+  
+
 
   free_matrix( edges );
   free_matrix( polygons );
